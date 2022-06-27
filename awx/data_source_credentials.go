@@ -1,5 +1,5 @@
 /*
-Use this data source to query Credential by ID.
+Use this data source to query Credential by ID. This seems like a redundant object and needs to be removed.
 
 Example Usage
 

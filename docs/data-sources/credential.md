@@ -13,19 +13,20 @@ Use this data source to query Credential by ID.
 ## Example Usage
 
 ```hcl
-*TBD*
+data "awx_credential" "example" {
+	id = 1
+}
 ```
 
 ## Argument Reference
 
 The following arguments are supported:
 
-* `id` - (Required) 
+* `id` - (Required) ID of Credential
 
 ## Attributes Reference
 
 In addition to all arguments above, the following attributes are exported:
 
-* `kind` - 
-* `tower_id` - 
-* `username` - 
+* `kind` - (Computed) Kind of credential
+* `username` - (Computed) Username from inputs username field

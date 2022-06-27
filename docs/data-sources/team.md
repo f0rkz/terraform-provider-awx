@@ -22,6 +22,6 @@ data "awx_team" "default" {
 
 The following arguments are supported:
 
-* `id` - (Optional)
-* `name` - (Optional)
+* `id` - (Optional) 
+* `name` - (Optional) 
 
