@@ -13,6 +13,6 @@ require (
 	github.com/pierrec/lz4 v2.0.5+incompatible // indirect
 )
 
-replace github.com/mrcrilly/goawx => github.com/f0rkz/goawx v0.4.1
+replace github.com/mrcrilly/goawx => github.com/f0rkz/goawx v0.6.0
 
 replace github.com/mrcrilly/terraform-provider-awx => ../.

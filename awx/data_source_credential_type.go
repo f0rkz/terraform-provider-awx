@@ -4,7 +4,9 @@ Use this data source to query Credential Type by ID.
 Example Usage
 
 ```hcl
-*TBD*
+data "awx_credential_type" "machine_ssh" {
+  id = 1
+}
 ```
 
 */
@@ -26,26 +28,32 @@ func dataSourceCredentialTypeByID() *schema.Resource {
 		Schema: map[string]*schema.Schema{
 			"id": {
 				Type:     schema.TypeInt,
+        Description: "ID of Credential Type",
 				Required: true,
 			},
 			"name": {
 				Type:     schema.TypeString,
+        Description: "(Computed) Name of the credential type",
 				Computed: true,
 			},
 			"description": {
 				Type:     schema.TypeString,
+        Description: "(Computed) Description of the credential type",
 				Computed: true,
 			},
 			"kind": {
 				Type:     schema.TypeString,
+        Description: "(Computed) Kind of credential type",
 				Computed: true,
 			},
 			"inputs": {
 				Type:     schema.TypeString,
+        Description: "(Computed) Input data for credential type",
 				Computed: true,
 			},
 			"injectors": {
 				Type:     schema.TypeString,
+        Description: "(Computed) Injector data for credential type",
 				Computed: true,
 			},
 		},

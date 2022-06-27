@@ -4,7 +4,9 @@ Use this data source to query Credential by ID.
 Example Usage
 
 ```hcl
-*TBD*
+data "awx_credential" "example" {
+  id = 1
+}
 ```
 
 */
@@ -25,18 +27,17 @@ func dataSourceCredentialByID() *schema.Resource {
 		Schema: map[string]*schema.Schema{
 			"id": {
 				Type:     schema.TypeInt,
+				Description: "ID of Credential",
 				Required: true,
-			},
-			"tower_id": {
-				Type:     schema.TypeInt,
-				Computed: true,
 			},
 			"username": {
 				Type:     schema.TypeString,
+				Description: "(Computed) Username from inputs username field",
 				Computed: true,
 			},
 			"kind": {
 				Type:     schema.TypeString,
+				Description: "(Computed) Kind of credential",
 				Computed: true,
 			},
 		},
@@ -61,7 +62,6 @@ func dataSourceCredentialByIDRead(ctx context.Context, d *schema.ResourceData, m
 	d.Set("kind", cred.Kind)
 	d.Set("tower_id", id)
 	d.SetId(strconv.Itoa(id))
-	// d.SetId(strconv.FormatInt(time.Now().Unix(), 10))
 
 	return diags
 }
